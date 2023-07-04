@@ -1,4 +1,5 @@
 # RISCY-Lib Ignores
+run/
 
 # Python Ignores
 __pycache__/
