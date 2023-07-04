@@ -1,0 +1,4 @@
+# RISCY-Lib Ignores
+
+# Python Ignores
+__pycache__/
