@@ -1,0 +1,6 @@
+[submodule "rbuild"]
+	path = rbuild
+	url = https://github.com/RISCY-Lib/rbuild
+[submodule "tb/agents/uart_agent"]
+	path = tb/agents/uart_agent
+	url = https://github.com/RISCY-Lib/uart_agent
