@@ -1,5 +1,8 @@
 include:
-  - ./src
+  - '.'
+
+src:
+  - test_pkg.sv
 
 needs:
-  - ../../rtl/rtl.bld
+  - ../env/env.bld
