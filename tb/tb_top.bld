@@ -1,0 +1,6 @@
+needs:
+  - tests/tests.bld
+  - ../rtl/rtl.bld
+
+src:
+  - tb_top.sv
