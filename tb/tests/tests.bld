@@ -5,4 +5,5 @@ src:
   - test_pkg.sv
 
 needs:
+  - ../uvm_utils/uvm_utils.bld
   - ../env/env.bld

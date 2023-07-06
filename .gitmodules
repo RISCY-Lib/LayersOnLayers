@@ -4,3 +4,6 @@
 [submodule "tb/agents/uart_agent"]
 	path = tb/agents/uart_agent
 	url = https://github.com/RISCY-Lib/uart_agent
+[submodule "tb/uvm_utils"]
+	path = tb/uvm_utils
+	url = https://github.com/riscy-lib/uvm_utils
