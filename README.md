@@ -1,2 +1,2 @@
 # LayersOnLayers
-A example of UVM Sequence Layering using AXI-Stream
+A example of UVM Sequence Layering using UART
