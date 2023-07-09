@@ -2,7 +2,7 @@ include:
   - '.'
 
 src:
-  - test_pkg.sv
+  - test_lib_pkg.sv
 
 needs:
   - ../uvm_utils/uvm_utils.bld

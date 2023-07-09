@@ -16,16 +16,16 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************/
 
-package tb_env_pkg;
+package test_lib_pkg;
 
   import uvm_pkg::*;
   `include "uvm_macros.svh"
 
-  // Other Env Imports
+  // Other Imports
+  import tb_env_pkg::*;
   import uart_agent_pkg::*;
 
-  // Includes
-  `include "src/tb_env_config.svh"
-  `include "src/tb_env.svh"
+  // Includes:
+  `include "src/test_base.svh"
 
 endpackage

@@ -19,12 +19,46 @@
 class tb_env extends uvm_env;
   `uvm_component_utils(tb_env)
 
+  //------------------------------------------
+  // Data Members
+  //------------------------------------------
+  uart_agent m_uart_agent;
+
+  tb_env_config m_cfg;
+
+  // TODO: RAL Stuff
+
+  //------------------------------------------
+  // Constraints
+  //------------------------------------------
+
+  //------------------------------------------
+  // Methods
+  //------------------------------------------
   function new(string name="tb_env", uvm_component parent=null);
     super.new(name, parent);
   endfunction
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
+
+    // Get the environment configuration
+    this.m_cfg = tb_env_config::get_config(this);
+
+    // Setup the UART Agent
+    uvm_config_db #(uart_agent_config)::set(
+      this,
+      "m_uart_agent*",
+      "uart_agent_config",
+      m_cfg.m_uart_agent_cfg
+    );
+    m_uart_agent = uart_agent::type_id::create("m_uart_agent", this);
+
+    // TODO RAL Stuff
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
   endfunction
 
 endclass

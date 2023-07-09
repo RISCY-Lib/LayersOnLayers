@@ -18,22 +18,31 @@
 
 module tb_top();
 
+  import uvm_pkg::*;
+  import test_lib_pkg::*;
+
   /////////////////////////////////////////////////////////////////////////////
   // Agent Interfaces
   /////////////////////////////////////////////////////////////////////////////
+  uart_if uart();
+  uart_driver_bfm uart_drv_bfm (uart);
+  uart_monitor_bfm uart_mon_bfm (uart);
 
   /////////////////////////////////////////////////////////////////////////////
   // DUT
   /////////////////////////////////////////////////////////////////////////////
   uart_dut dut(
-    .rx_in (),
-    .tx_out()
+    .rx_in (uart.rx),
+    .tx_out(uart.tx)
   );
 
   /////////////////////////////////////////////////////////////////////////////
   // Start UVM Test and Setup UVM Config DB
   initial begin
-    // TODO
+    uvm_config_db #(virtual uart_monitor_bfm)::set(null, "uvm_test_top", "uart_mon_bfm", uart_mon_bfm);
+    uvm_config_db #(virtual uart_driver_bfm)::set(null, "uvm_test_top", "uart_drv_bfm", uart_drv_bfm);
+
+    run_test();
   end
 
 endmodule
